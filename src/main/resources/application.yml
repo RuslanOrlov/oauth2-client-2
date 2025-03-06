@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: oauth2-client-1-20250105
+  security:
+    oauth2:
+      client:
+        registration:
+          my-client:
+            provider: my-auth-provider
+            client-id: my-client-id
+            client-secret: secret
+            authorization-grant-type: authorization_code
+            scope: openid,profile,write,delete
+            redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
+        provider:
+          my-auth-provider:
+            issuer-uri: http://authserver:9000
+logging:
+  level:
+    org.springframework.security: TRACE
+    org.springframework.security.oauth2: TRACE

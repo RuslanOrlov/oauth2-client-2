@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Home page</title>
+</head>
+
+<body>
+    <h1>Home page</h1>
+
+    <a th:href="@{/authors}">Go to authors</a>
+
+    <br><br>
+
+    <a th:href="@{/my-logout}">Logout</a>
+
+    <br><br>
+
+    <a th:href="@{/check-consent}">Check consent</a>
+
+    <!--<a th:href="@{http://authserver:9000/oauth2/logout}">Logout</a>-->
+
+    <!--<form th:action="@{/logout}" method="post">
+        <button type="submit">Logout</button>
+    </form>-->
+</body>
+
+</html>

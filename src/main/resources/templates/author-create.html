@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Create New Author</title>
+</head>
+
+<body>
+<h1>Author</h1>
+<form th:method="post" th:action="@{/authors}" th:object="${author}">
+    <label for="name">Name:</label>
+    <input type="text" id="name" th:field="*{name}">
+    <br><br>
+
+    <input type="submit" value="Create new author">
+    <input type="submit" value="Back to the authors list" formmethod="get">
+</form>
+
+</body>
+</html>
