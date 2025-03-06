@@ -1,7 +1,7 @@
-package org.oauth2client120250105.controllers;
+package org.oauth2client2.controllers;
 
 import lombok.RequiredArgsConstructor;
-import org.oauth2client120250105.services.CheckConsentService;
+import org.oauth2client2.services.CheckConsentService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 

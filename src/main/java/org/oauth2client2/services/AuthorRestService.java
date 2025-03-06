@@ -1,7 +1,7 @@
-package org.oauth2client120250105.services;
+package org.oauth2client2.services;
 
 import lombok.RequiredArgsConstructor;
-import org.oauth2client120250105.dtos.Author;
+import org.oauth2client2.dtos.Author;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;

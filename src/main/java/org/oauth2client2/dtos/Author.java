@@ -1,4 +1,4 @@
-package org.oauth2client120250105.dtos;
+package org.oauth2client2.dtos;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

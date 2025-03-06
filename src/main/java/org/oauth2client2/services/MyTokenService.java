@@ -1,4 +1,4 @@
-package org.oauth2client120250105.services;
+package org.oauth2client2.services;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.Authentication;

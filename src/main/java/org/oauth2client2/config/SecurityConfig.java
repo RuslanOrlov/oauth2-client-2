@@ -1,4 +1,4 @@
-package org.oauth2client120250105.config;
+package org.oauth2client2.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

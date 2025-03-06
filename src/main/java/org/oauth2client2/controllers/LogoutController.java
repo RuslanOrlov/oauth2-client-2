@@ -1,11 +1,11 @@
-package org.oauth2client120250105.controllers;
+package org.oauth2client2.controllers;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.oauth2client120250105.services.MyTokenService;
+import org.oauth2client2.services.MyTokenService;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
@@ -32,6 +32,11 @@ public class LogoutController {
 
         if (consentRemoved) {
             log.info("=== Согласие было удалено из другого сеанса ===");
+
+            // Очистка аутентификации Spring Security и сессии
+            SecurityContextHolder.clearContext();
+            new SecurityContextLogoutHandler().logout(request, response, auth);
+
             return "redirect:/without-consent-logout";
         }
         // Получаем токен доступа из сервиса MyTokenService
