@@ -52,12 +52,16 @@ public class CheckConsentService {
                     return response.getBody();
                 }
             } catch (Exception ex) {
-                log.error("Ошибка при проверке согласия", ex);
-                return false;
+                log.error("=== Ошибка при проверке согласия ===", ex);
+                // Возвращаем true, если согласие не провалидировано
+                // или произошла ошибка. Значение true указывает на
+                // отсутствие согласия.
+                return true;
             }
         }
-        // Возвращаем false, если аутентификация отсутствует
-        return false;
+        // Возвращаем true, если аутентификация отсутствует.
+        // Значение true указывает на отсутствие согласия.
+        return true;
     }
 
 }

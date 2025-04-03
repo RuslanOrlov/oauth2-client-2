@@ -1,6 +1,7 @@
 package org.oauth2client2.services;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.authentication.AuthenticationServiceException;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -14,6 +15,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.Instant;
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class MyTokenService {
@@ -35,6 +37,7 @@ public class MyTokenService {
 
         // Если авторизованного клиента не существует, выбрасываем исключение
         if (authorizedClient == null) {
+            log.warn("=== Unable to load OAuth2 client ===");
             throw new AuthenticationServiceException("Unable to load OAuth2 client");
         }
 
@@ -76,6 +79,7 @@ public class MyTokenService {
 
         // Если авторизованного клиента не существует, выбрасываем исключение
         if (authorizedClient == null) {
+            log.warn("=== Unable to load OAuth2 client ===");
             throw new AuthenticationServiceException("Unable to load OAuth2 client");
         }
 
@@ -95,6 +99,7 @@ public class MyTokenService {
         }
 
         // Выбрасываем исключение, если обновление не удалось
+        log.warn("=== Unable to refresh access token ===");
         throw new AuthenticationServiceException("Unable to refresh access token");
     }
 }
