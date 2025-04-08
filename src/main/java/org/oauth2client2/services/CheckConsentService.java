@@ -53,6 +53,7 @@ public class CheckConsentService {
                 }
             } catch (Exception ex) {
                 log.error("=== Ошибка при проверке согласия ===", ex);
+                log.error("=== {} ===", ex.getMessage());
                 // Возвращаем true, если согласие не провалидировано
                 // или произошла ошибка. Значение true указывает на
                 // отсутствие согласия.
